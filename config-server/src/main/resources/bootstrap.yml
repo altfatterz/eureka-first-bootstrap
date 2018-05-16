@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        # makes sure it configures itself from the git repository see https://github.com/spring-cloud/spring-cloud-config/blob/master/docs/src/main/asciidoc/spring-cloud-config.adoc#embedding-the-config-server
+        bootstrap: true
+        git:
+          uri: file:///${user.home}/projects/helsana/spring-cloud-config-client-bootstrap/eureka-first-bootstrap-config
