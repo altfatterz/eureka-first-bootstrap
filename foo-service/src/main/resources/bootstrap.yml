@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: foo-service
+
+  # using eureka first bootstrap - the app first locates the eureka-server, the eureka-server locates the config-server which gets the configuration
+  # !!!! - For some reason here it does not get the details fom config-server, server.port and spring.security.user.name and password are not applied
+  cloud.config:
+    discovery:
+      enabled: true
+      service-id: config-server
+    fail-fast: true
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:eureka-dev@localhost:8761/eureka/
+
