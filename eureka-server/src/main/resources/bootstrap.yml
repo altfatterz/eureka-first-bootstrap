@@ -2,4 +2,4 @@ spring:
   # the eureka server has to connect to config server first to get the configuration
   cloud:
     config:
-      uri: ${CONFIG_URL:http://config:password@localhost:8888}
+      uri: ${CONFIG_URL:http://config:config-dev@localhost:8888}
